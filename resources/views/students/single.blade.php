@@ -31,9 +31,9 @@
             </nav>
             <br>
         @include('inc.messages')
+        <div class="jumbotron">
         <a href="./" class="btn btn-secondary float-right">Back</a>
         <h1>{{$student->firstname}} {{$student->lastname}}</h1>
-        <div class="jumbotron">
             <p>{{$student->indexNo}}</p>
             <hr>
             {{$student->email}}

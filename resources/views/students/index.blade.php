@@ -1,5 +1,6 @@
 @extends('layouts.app')
     @section('content')
+    <h3 style="text-align:center;">{{count($students)}} Student(s) and still counting...</h3>
         <h1>Students</h1>
         @if(count($students) > 0)
             @foreach($students as $student)
