@@ -48,11 +48,11 @@
                     </div>
                     <div class="form-group">
                         {{form::label('email', 'Email')}}
-                        {{form::text('email', $student->email, ['class' => 'form-control', 'placeholder' => 'Please Enter Student Email Address'])}}
+                        {{form::email('email', $student->email, ['class' => 'form-control', 'placeholder' => 'Please Enter Student Email Address'])}}
                     </div>  
                     <div class="form-group">
                         {{form::label('phone', 'Phone')}}
-                        {{form::text('phone', $student->phone, ['class' => 'form-control', 'placeholder' => 'Please Enter Student Phone Number'])}}
+                        {{form::number('phone', $student->phone, ['class' => 'form-control', 'placeholder' => 'Please Enter Student Phone Number'])}}
                     </div>      
                     {{form::hidden('_method', 'PUT')}}
                     {{form::submit('Update!', ['class'=> 'btn btn-primary'])}}
