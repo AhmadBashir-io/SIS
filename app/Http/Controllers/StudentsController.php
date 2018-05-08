@@ -13,7 +13,7 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $students = Student::orderBy('firstname', 'desc')->paginate(10);
+        $students = Student::orderBy('firstname', 'asc')->paginate(10);
         return view('students.index')->with('students', $students);
     }
 
@@ -90,15 +90,15 @@ class StudentsController extends Controller
     public function update(Request $request, $id)
     {
           //CREATE POST
-          $student = Student::find($id);
-          $student->firstname = $request->input('firstname');
-          $student->lastname  = $request->input('lastname');
-          $student->indexNo  = $request->input('indexNo');
-          $student->email  = $request->input('email');
-          $student->phone  = $request->input('phone');
-          $student->save();
+        $student = Student::find($id);
+        $student->firstname = $request->input('firstname');
+        $student->lastname  = $request->input('lastname');
+        $student->indexNo  = $request->input('indexNo');
+        $student->email  = $request->input('email');
+        $student->phone  = $request->input('phone');
+        $student->save();
   
-          return redirect('/students')->with('success', 'Whoohoo!, Student Updated! :)');
+        return redirect('/students')->with('success', 'Whoohoo!, Student Updated! :)');
       
     }
 
@@ -110,7 +110,7 @@ class StudentsController extends Controller
      */
     public function destroy($id)
     {
-        $student = student::find($id);
+        $student = Student::find($id);
         $student->delete();
         return redirect('/students')->with('success','Whohoo! Student Deleted, Now Lets Add More ;-)');
     }

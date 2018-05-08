@@ -14,5 +14,4 @@
 Route::get('/', 'PagesController@index');
 Route::get('/create', 'PagesController@create');
 Route::get('/students', 'PagesController@manage');
-
 Route::resource('students','StudentsController');
